@@ -17,7 +17,7 @@
   :root{
     /* mañana: crema, durazno y verde de salsa */
     --crema:#fff7ec; --papel:#fffdf8; --tinta:#2e2116; --suave:#7a6550;
-    --oro:#e0a422; --durazno:#ff9a5c; --verde:#6a9e3f; --rojo:#c2452d;
+    --oro:#e0a422; --durazno:#ff9a5c; --verde:#4f8a3c; --rojo:#c2452d;
     --fs:'Jost', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --ft:'Cormorant Garamond', Georgia, serif;
   }
@@ -118,6 +118,14 @@
     border-radius:8px; padding:5px 11px; font-size:12px; font-weight:800; letter-spacing:.14em; opacity:.88;
   }
 
+  .codigo{margin-top:16px; text-align:center; background:var(--tinta); color:var(--crema); border-radius:16px; padding:14px 12px 15px}
+  .codigo small{display:block; font-size:10px; letter-spacing:.22em; text-transform:uppercase; opacity:.65; font-weight:700}
+  .codigo b{display:block; font-size:44px; font-weight:700; letter-spacing:.16em; line-height:1.1; margin:4px 0 2px; font-variant-numeric:tabular-nums; color:var(--durazno)}
+  .codigo em{display:block; font-style:normal; font-size:12.5px; opacity:.8; line-height:1.4}
+  .falta{margin-top:18px; background:rgba(255,255,255,.72); border:1px solid rgba(46,33,22,.10); border-radius:16px; padding:13px 10px}
+  .falta b{display:block; font-size:27px; font-weight:700; font-variant-numeric:tabular-nums; color:var(--durazno); letter-spacing:-.02em}
+  .falta small{display:block; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--suave); margin-top:3px}
+
   /* ---------- final ---------- */
   .dedica{margin:26px 4px 4px; padding:22px 6px 4px; text-align:center; position:relative}
   .dedica::before{content:"“"; position:absolute; top:-16px; left:50%; transform:translateX(-50%); font-family:var(--ft); font-size:70px; line-height:1; color:var(--durazno); opacity:.35}
@@ -147,12 +155,13 @@
   <section class="pantalla on" id="p1">
     <div class="kicker">Servicio a la cama · ahorita</div>
     <h1>No te<br><em>levantes</em></h1>
-    <p class="sub">Ya viene tu brunch para allá.<br>Tú nada más abre la puerta, amorrrr.</p>
+    <p class="sub">Ya viene tu brunch en camino.<br>Tú nada más abre la puerta, amorrrr.</p>
     <div class="relojes">
       <div class="rj"><b id="rel-ella">--:--</b><small>Tu reloj</small></div>
       <div class="rj mio"><b id="rel-el">--:--</b><small>El mío</small></div>
     </div>
-    <p class="sub" style="margin-top:12px; font-size:14.5px">Allá siempre es una hora menos.<br>Por eso todavía te alcanza para el brunch.</p>
+    <div class="falta"><b id="falta">--</b><small id="faltaTxt">para que toquen tu puerta</small></div>
+    <p class="sub" style="margin-top:12px; font-size:14.5px">Llega entre <b>10:40 y 10:50</b> de tu hora.<br>Allá siempre es una hora menos que acá.</p>
     <div class="mesa" id="mesa1" style="pointer-events:none">
       <div class="tapa"></div>
       <div class="charola"></div>
@@ -170,9 +179,10 @@
         <ellipse cx="110" cy="99" rx="106" ry="50" fill="#e4d8c6"/>
         <ellipse cx="110" cy="94" rx="106" ry="50" fill="#fffdf8"/>
         <ellipse cx="110" cy="93" rx="88" ry="40" fill="#f4ecdf"/>
-        <!-- salsa verde -->
-        <ellipse cx="110" cy="93" rx="80" ry="35" fill="#5d8f34"/>
-        <ellipse cx="110" cy="91" rx="76" ry="32" fill="#77ab45"/>
+        <!-- salsa roja -->
+        <ellipse cx="110" cy="93" rx="80" ry="35" fill="#a3301d"/>
+        <ellipse cx="110" cy="91" rx="76" ry="32" fill="#c2452d"/>
+        <ellipse cx="102" cy="88" rx="44" ry="18" fill="#d15736" opacity=".6"/>
         <!-- totopos del fondo, asomando por el borde -->
         <g stroke="#a86a16" stroke-width="1.6" stroke-linejoin="round">
           <path d="M44 84 L70 72 L66 94 Z" fill="#f0bb5c"/>
@@ -241,13 +251,18 @@
       <div class="t-sello"><span class="sello">PAGADO</span></div>
       <div class="t-fila"><span>Para</span><span>Mi princesa</span></div>
       <div class="t-fila"><span>De</span><span>Tu Ferny</span></div>
-      <div class="t-fila"><span>Plato</span><span>Chilaquiles con arrachera</span></div>
+      <div class="t-fila"><span>Plato</span><span>Chilaquiles <b style="color:#c2452d">rojos</b> con arrachera</span></div>
       <div class="t-fila"><span>Servicio</span><span>Brunch (se nos hizo tarde)</span></div>
       <div class="t-fila"><span>Origen</span><span>Tu lugar favorito</span></div>
-      <div class="t-fila"><span>Entrega</span><span>Hoy, ahorita</span></div>
+      <div class="t-fila"><span>Entrega</span><span>Hoy, 10:40–10:50 am<br>(tu hora)</span></div>
       <div class="t-fila"><span>Llega por</span><span>Uber Eats, hasta tu puerta</span></div>
       <div class="t-fila"><span>Mesero</span><span>Ferny</span></div>
       <div class="t-total"><span>Lo que te toca pagar</span><b>$0</b></div>
+      <div class="codigo">
+        <small>Código para el repartidor</small>
+        <b>1155</b>
+        <em>Dáselo cuando toque. Sin eso no te lo entrega.</em>
+      </div>
       <div class="t-nota">
         <small>Nota del cliente</small>
         No es para que se te pase nada. Es porque sí, porque es martes y porque me da la gana consentirte. Y no te confundas, princess: esto va a ser lo normal.
@@ -258,9 +273,9 @@
 
   <!-- 4 -->
   <section class="pantalla" id="p4">
-    <div class="kicker">Lo único que necesito</div>
-    <h2>¿Ya tienes<br><em>hambre?</em></h2>
-    <p class="sub">Dime dónde estás y en cuánto puedes recibirlo.<br>Yo lo mando y tú nada más abres.</p>
+    <div class="kicker">En unos minutos</div>
+    <h2>Nada más<br><em>ábrele</em></h2>
+    <p class="sub">Ya va en camino. Ten a la mano el <b>1155</b><br>y avísame cuando llegue.</p>
     <div class="apodos">
       <div>Amor de mi vida.</div>
       <div>Dueña de mi corazón.</div>
@@ -301,6 +316,18 @@ function pintarRelojes(){
 }
 pintarRelojes(); setInterval(pintarRelojes, 20000);
 
+/* cuánto falta para la entrega — 10:40 hora del Pacífico (Nayarit, UTC-7 todo el año) */
+const LLEGA = new Date('2026-09-22T10:40:00-07:00');
+function pintarFalta(){
+  const t = LLEGA - new Date();
+  const b = $('#falta'), txt = $('#faltaTxt');
+  if (t <= 0){ b.textContent = '¡Ya casi!'; txt.textContent = 'va en camino'; return; }
+  const m = Math.floor(t/60000), h = Math.floor(m/60);
+  b.textContent = h > 0 ? h + ' h ' + (m%60) + ' min' : m + ' min';
+  txt.textContent = 'para que toquen tu puerta';
+}
+pintarFalta(); setInterval(pintarFalta, 15000);
+
 /* destapar */
 let destapado = false;
 $('#mesa').addEventListener('click', () => {
@@ -321,7 +348,7 @@ $('#otraVez').addEventListener('click', e => {
 });
 
 /* WhatsApp: sin número, abre el selector de chats con el mensaje listo */
-$('#wa').href = 'https://wa.me/?text=' + encodeURIComponent('Ya tengo hambre, amorrrr 🍳 mándamelos');
+$('#wa').href = 'https://wa.me/?text=' + encodeURIComponent('Ya llegaron mis chilaquiles 🍳 gracias amorrrr');
 
 /* confeti en tonos de desayuno */
 function confetear(){
