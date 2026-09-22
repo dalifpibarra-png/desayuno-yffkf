@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Tu desayuno, princesa 🍳</title>
+<title>Tu brunch, princesa 🍳</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#fff7ec">
-<meta property="og:title" content="Tu desayuno, princesa 🍳">
-<meta property="og:description" content="No te levantes. Ábrelo.">
+<meta property="og:title" content="Tu brunch, princesa 🍳">
+<meta property="og:description" content="No te levantes. Ábrelo, amorrrr.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,6 +78,16 @@
   .mesa.abierta .tapa{transform:translate(-50%,-150px) rotate(-16deg); opacity:0}
   .charola{position:absolute; left:50%; bottom:0; transform:translateX(-50%); width:262px; height:26px; border-radius:14px; background:linear-gradient(180deg,#e7d9c3,#c3ab8a); box-shadow:0 14px 26px rgba(46,33,22,.22)}
 
+  /* ---------- relojes ---------- */
+  .relojes{display:flex; gap:10px; justify-content:center; margin-top:20px}
+  .rj{flex:1 1 0; min-width:0; background:rgba(255,255,255,.7); border:1px solid rgba(46,33,22,.10); border-radius:16px; padding:12px 6px}
+  .rj b{display:block; font-size:25px; font-weight:700; font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+  .rj small{display:block; font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--suave); margin-top:3px}
+  .rj.mio b{color:var(--durazno)}
+  .apodos{margin-top:18px; display:grid; gap:7px}
+  .apodos div{font-family:var(--ft); font-size:19px; font-style:italic; color:var(--tinta); opacity:.9}
+  .apodos div:last-child{font-style:normal; font-weight:700; color:var(--durazno); font-size:22px}
+
   /* ---------- la comanda ---------- */
   .ticket{
     position:relative; max-width:360px; margin:22px auto 0; text-align:left; background:var(--papel); color:var(--tinta);
@@ -102,9 +112,10 @@
   .t-total b{font-family:var(--ft); font-size:30px; color:var(--verde); font-weight:700}
   .t-nota{margin-top:16px; background:rgba(255,154,92,.12); border-left:3px solid var(--durazno); padding:12px 14px; font-size:15px; line-height:1.5}
   .t-nota small{display:block; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--durazno); font-weight:700; margin-bottom:5px}
+  .t-sello{display:flex; justify-content:flex-end; margin-top:12px; margin-bottom:-4px}
   .sello{
-    position:absolute; right:14px; top:96px; transform:rotate(-14deg); border:2.5px solid var(--verde); color:var(--verde);
-    border-radius:8px; padding:5px 10px; font-size:12px; font-weight:800; letter-spacing:.14em; opacity:.85;
+    display:inline-block; transform:rotate(-7deg); border:2.5px solid var(--verde); color:var(--verde);
+    border-radius:8px; padding:5px 11px; font-size:12px; font-weight:800; letter-spacing:.14em; opacity:.88;
   }
 
   /* ---------- final ---------- */
@@ -134,9 +145,14 @@
 
   <!-- 1 -->
   <section class="pantalla on" id="p1">
-    <div class="kicker">Servicio a la cama · mañana</div>
+    <div class="kicker">Servicio a la cama · ahorita</div>
     <h1>No te<br><em>levantes</em></h1>
-    <p class="sub">Mañana el desayuno llega a tu puerta.<br>Tú nada más abre los ojos.</p>
+    <p class="sub">Ya viene tu brunch para allá.<br>Tú nada más abre la puerta, amorrrr.</p>
+    <div class="relojes">
+      <div class="rj"><b id="rel-ella">--:--</b><small>Tu reloj</small></div>
+      <div class="rj mio"><b id="rel-el">--:--</b><small>El mío</small></div>
+    </div>
+    <p class="sub" style="margin-top:12px; font-size:14.5px">Allá siempre es una hora menos.<br>Por eso todavía te alcanza para el brunch.</p>
     <div class="mesa" id="mesa1" style="pointer-events:none">
       <div class="tapa"></div>
       <div class="charola"></div>
@@ -218,21 +234,23 @@
     <div class="kicker">Ya está pedido</div>
     <h2>Tu comanda</h2>
     <div class="ticket">
-      <div class="sello">PAGADO</div>
       <div class="t-log">
         <b>Desayunos Ferny</b>
         <small>Servicio a la cama · Mesa 1</small>
       </div>
+      <div class="t-sello"><span class="sello">PAGADO</span></div>
       <div class="t-fila"><span>Para</span><span>Mi princesa</span></div>
+      <div class="t-fila"><span>De</span><span>Tu Ferny</span></div>
       <div class="t-fila"><span>Plato</span><span>Chilaquiles con arrachera</span></div>
+      <div class="t-fila"><span>Servicio</span><span>Brunch (se nos hizo tarde)</span></div>
       <div class="t-fila"><span>Origen</span><span>Tu lugar favorito</span></div>
-      <div class="t-fila"><span>Entrega</span><span>Mañana, en la mañana</span></div>
+      <div class="t-fila"><span>Entrega</span><span>Hoy, ahorita</span></div>
       <div class="t-fila"><span>Llega por</span><span>Uber Eats, hasta tu puerta</span></div>
       <div class="t-fila"><span>Mesero</span><span>Ferny</span></div>
       <div class="t-total"><span>Lo que te toca pagar</span><b>$0</b></div>
       <div class="t-nota">
         <small>Nota del cliente</small>
-        No es para que se te pase nada. Es porque sí, porque hoy es martes y porque me da la gana consentirte.
+        No es para que se te pase nada. Es porque sí, porque es martes y porque me da la gana consentirte. Y no te confundas, princess: esto va a ser lo normal.
       </div>
     </div>
     <div style="margin-top:22px"><button class="btn" id="aFinal">Falta una cosa →</button></div>
@@ -241,16 +259,23 @@
   <!-- 4 -->
   <section class="pantalla" id="p4">
     <div class="kicker">Lo único que necesito</div>
-    <h2>¿A qué hora<br><em>tienes hambre?</em></h2>
-    <p class="sub">Dime la hora y a esa hora toca el repartidor.<br>Ni un minuto tarde.</p>
+    <h2>¿Ya tienes<br><em>hambre?</em></h2>
+    <p class="sub">Dime dónde estás y en cuánto puedes recibirlo.<br>Yo lo mando y tú nada más abres.</p>
+    <div class="apodos">
+      <div>Amor de mi vida.</div>
+      <div>Dueña de mi corazón.</div>
+      <div>Futura madre de mis hijos.</div>
+      <div>La luz de mi vida.</div>
+      <div>Mi princesa.</div>
+    </div>
     <div class="dedica">
-      <p>Que te acuerdes de mí<br>desde el primer bocado del día.<br>Te amo, <b>princesa</b>.</p>
+      <p>Que te acuerdes de mí<br>desde el primer bocado del día.<br>Te amo, <b>amorrrr</b>.</p>
     </div>
     <div class="acciones">
-      <a id="wa" href="#"><button class="btn" style="width:100%">Decirle la hora 💬</button></a>
+      <a id="wa" href="#"><button class="btn" style="width:100%">Contestarle a mi Ferny 💬</button></a>
       <a href="#" id="otraVez"><button class="btn ghost" style="width:100%">Volver a destapar 🍳</button></a>
     </div>
-    <div class="pie">Mañana no cocinas.<br>Mañana nada más desayunas.</div>
+    <div class="pie">Hoy no cocinas.<br>Hoy nada más abres la puerta.</div>
   </section>
 </div>
 
@@ -263,6 +288,18 @@ const ir = id => {
 };
 
 $('#abrir').addEventListener('click', () => ir('p2'));
+
+/* relojes en vivo: ella en Nayarit (una hora menos), él en Jalisco */
+function hora(tz){
+  return new Intl.DateTimeFormat('es-MX', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
+}
+function pintarRelojes(){
+  try {
+    $('#rel-ella').textContent = hora('America/Mazatlan');
+    $('#rel-el').textContent   = hora('America/Mexico_City');
+  } catch(e){ /* si el navegador no trae zonas horarias, se quedan en --:-- y no se rompe nada */ }
+}
+pintarRelojes(); setInterval(pintarRelojes, 20000);
 
 /* destapar */
 let destapado = false;
@@ -284,7 +321,7 @@ $('#otraVez').addEventListener('click', e => {
 });
 
 /* WhatsApp: sin número, abre el selector de chats con el mensaje listo */
-$('#wa').href = 'https://wa.me/?text=' + encodeURIComponent('Quiero mis chilaquiles a las ___ 🍳');
+$('#wa').href = 'https://wa.me/?text=' + encodeURIComponent('Ya tengo hambre, amorrrr 🍳 mándamelos');
 
 /* confeti en tonos de desayuno */
 function confetear(){
